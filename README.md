@@ -23,14 +23,10 @@ Some differences in ordering, emphasis, or coverage may exist between the two so
 
 ## 📝 Homework Assignments
 
-Homework assignments are available at the following link:
 
-- [Google Drive Folder](https://drive.google.com/drive/folders/12gRC-PjI84EljxTZ8Rn214b1QDSZ2Pb?usp=sharing)
-
-> **Note:**  
 Some homework problems are adapted from the Sharif University and the MIT university courses, while most assignments have been revised and restructured.
 
-If you have any feedback or suggestions regarding the assignments, feel free to contribute. Comments are enabled on most homework files.
+If you have any feedback or suggestions regarding the assignments, feel free to contribute.
 
 ---
 
