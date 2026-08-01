@@ -1,6 +1,5 @@
 # Statistics and Probability — Homework 1
 
-
 ## Problem 1 — Poker hands (20 points)
 
 You can easily look up the probabilities of 5-card poker hands, for example at [https://en.wikipedia.org/wiki/Poker_probability](https://en.wikipedia.org/wiki/Poker_probability).
@@ -39,15 +38,15 @@ If the die comes up 6, you receive 1,000,000 Toman. Otherwise, you must pay 500,
 
 You enter the game with an initial balance of 1,000,000 Toman and play three rounds. If your money runs out before the three rounds are over, the game ends at that round.
 
-**(a)** Propose a suitable sample space Ω for this problem. *(4 points)*
+**(a)** Propose a suitable sample space Ω for this problem. *(5 points)*
 
 **(b)** Define a random variable *X* representing the profit you obtain for each outcome in Ω. If you lose money, the profit is negative. *(4 points)*
 
-**(c)** Derive and sketch the PMF and the CDF of *X*. *(6 points)*
+**(c)** Derive and sketch the PMF and the CDF of *X*. *(8 points)*
 
-**(d)** Using the random variable and PMF above, compute the expected value of this game. Is it a fair game? *(3 points)*
+**(d)** Using the random variable and PMF above, compute the expected value of this game. Is it a fair game? *(4 points)*
 
-**(e)** Using the CDF, state the probability that this game turns out to be profitable. *(3 points)*
+**(e)** Using the CDF, state the probability that this game turns out to be profitable, i.e. that *X* is strictly positive. *(4 points)*
 
 *Hint:* Your profit at the end of the game is determined by the difference between the number of wins and the number of losses.
 
@@ -84,6 +83,6 @@ As is standard, the faces of a die are numbered from 1 to *n*, where *n* is the 
 
 Without showing you the chosen die, your friend rolls it and tells you the result. Let *R* be the roll outcome.
 
-**(a)** Use Bayes' rule to find *P(S = s | R = 3)* for *s* = 4, 6, 8. *(10 points)*
+**(a)** Use Bayes' rule to find *P(S = s | R = 3)* for *s* = 4, 6, 8. *(12 points)*
 
-**(b)** If *R* = 3, which die is the most likely one? Briefly explain why the answer differs from the prior. *(5 points)*
+**(b)** If *R* = 3, which die is the most likely one? Briefly explain why the answer differs from the prior. *(8 points)*
