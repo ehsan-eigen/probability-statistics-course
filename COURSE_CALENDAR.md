@@ -1,4 +1,4 @@
-# Probability & Statistics (STA2103) — 10‑Week Course Calendar
+# Probability & Statistics
 
 **Main resources** (links are on the course page):
 - **English reading** — *Introduction to Probability and Statistics*, MIT 18.05. Weeks 1–5 use the **All Probability Reading** file; Weeks 6–9 use the **All Statistics Reading** file. Cells below give **page numbers** in those files.
