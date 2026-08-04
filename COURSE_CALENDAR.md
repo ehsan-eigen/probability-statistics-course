@@ -6,7 +6,7 @@
   - **All Probability Reading (PDF)** — used for Weeks 1–5: https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_probability_pdf/
   - **All Statistics Reading (PDF)** — used for Weeks 6–9: https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_statistics_pdf/
 
-Reading cells give page numbers **within the relevant PDF above** (e.g. "pp. 1–39" for Week 1 means pages 1–39 of the **All Probability Reading** PDF). Videos hosted outside the course (YouTube, Khan Academy) are linked directly. All assignments are due **Saturday, 23:59**.
+**All assignments are due **Saturday, 23:59**.
 
 | Week | Topics | Reading (pages) | Farsi Lectures | Optional Materials | Recorded Online Classes | Assignment |
 |------|--------|-----------------|-----------------|---------------------|--------------------------|------------|
