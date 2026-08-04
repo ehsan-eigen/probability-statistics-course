@@ -1,7 +1,7 @@
 # Probability & Statistics
 
 **Main resources:**
-- **Farsi lectures** — *Introduction to Probability and Statistics*, Sharif University (Dr. Sharifzarchi): https://maktabkhooneh.org/course/%D8%A2%D9%85%D8%A7%D8%B1-%D8%A7%D8%AD%D8%AA%D9%85%D8%A7%D9%84-%D9%85%D9%87%D9%86%D8%AF%D8%B3%DB%8C-mk627/ — cells below give the **session number**; find the video on the course page.
+- **Farsi lectures** — *Introduction to Probability and Statistics*, Sharif University (Dr. Sharifzarchi): https://maktabkhooneh.org/course/%D8%A2%D9%85%D8%A7%D8%B1-%D8%A7%D8%AD%D8%AA%D9%85%D8%A7%D9%84-%D9%85%D9%87%D9%86%D8%AF%D8%B3%DB%8C-mk627/
 - **English reading** — *Introduction to Probability and Statistics*, MIT 18.05, course page: https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/pages/classes-reading-and-in-class-materials/
   - **All Probability Reading (PDF)** — used for Weeks 1–5: https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_probability_pdf/
   - **All Statistics Reading (PDF)** — used for Weeks 6–9: https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_statistics_pdf/
