@@ -10,7 +10,7 @@ For this course, we recommend the following learning approach:
 
 - 🎥 **Video lectures:** Follow the undergraduate Probability and Statistics lectures by **Dr. Sharifzadeh** at Sharif University.
   - [Course GitHub Repository](https://github.com/SharifiZarchi/Probability_Statistics)
-  - [Course Video Lectures](https://maktabkhooneh.org/course/%D8%A2%D9%85%D8%A7%D8%B1-%D8%A7%D8%AD%D8%AA%D9%85%D8%A7%D9%84-%D9%85%D9%87%D9%86%D8%AF%D8%B3%DB%8C-mk627/)
+  - Course Video Lectures: Telegram -> @Statistics_SharifiZarchi
 
 - 📚 **Lecture slides:** Study the slides from the **MIT OpenCourseWare Introduction to Probability and Statistics (18.05)** course:
   - https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/pages/classes-reading-and-in-class-materials/
