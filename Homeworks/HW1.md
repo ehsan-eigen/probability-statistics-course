@@ -30,25 +30,21 @@ Assume all faces of each die are equally likely.
 
 ---
 
-## Problem 3 — A three-round gambling game (25 points)
+## Problem 3 — Independence, pairwise and mutual (25 points)
 
-Consider the following gambling game.
+We toss two fair coins. Define the following three events:
 
-If the die comes up 6, you receive 1,000,000 Toman. Otherwise, you must pay 500,000 Toman.
+- Event *A* = "the first coin is heads"
+- Event *B* = "the second coin is heads"
+- Event *C* = "the two coins show the same face"
 
-You enter the game with an initial balance of 1,000,000 Toman and play three rounds. If your money runs out before the three rounds are over, the game ends at that round.
+**(a)** Write out the sample space and compute *P(A)*, *P(B)*, and *P(C)*. *(6 points)*
 
-**(a)** Propose a suitable sample space Ω for this problem. *(5 points)*
+**(b)** Show that the three events are **pairwise independent** — that is, verify the independence condition for each of the three pairs *A,B*; *A,C*; and *B,C*. *(7 points)*
 
-**(b)** Define a random variable *X* representing the profit you obtain for each outcome in Ω. If you lose money, the profit is negative. *(4 points)*
+**(c)** Compute *P(A ∩ B ∩ C)* and compare it with *P(A) · P(B) · P(C)*. Are the three events mutually independent? What does this tell you about whether pairwise independence implies mutual independence? *(6 points)*
 
-**(c)** Derive and sketch the PMF and the CDF of *X*. *(8 points)*
-
-**(d)** Using the random variable and PMF above, compute the expected value of this game. Is it a fair game? *(4 points)*
-
-**(e)** Using the CDF, state the probability that this game turns out to be profitable, i.e. that *X* is strictly positive. *(4 points)*
-
-*Hint:* Your profit at the end of the game is determined by the difference between the number of wins and the number of losses.
+**(d)** Compute *P(A ∪ B ∪ C)* using the inclusion–exclusion principle. *(6 points)*
 
 ---
 
