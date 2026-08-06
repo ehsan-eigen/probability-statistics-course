@@ -1,10 +1,21 @@
 # Probability & Statistics
 
-**Main resources:**
-- **Farsi lectures** — *Introduction to Probability and Statistics*, Sharif University (Dr. Sharifzarchi): Telegram -> @Statistics_SharifiZarchi
-- **English reading** — *Introduction to Probability and Statistics*, MIT 18.05, course page: https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/pages/classes-reading-and-in-class-materials/
+## 🎥 Video Lectures & 📚 Recommended Slides
+
+For this course, we recommend the following learning approach:
+
+- **Sharif University — Dr. SharifiZarchi** *(Farsi)*: undergraduate Probability and Statistics course with both 🎥 video lectures and 📚 slides.
+  - 🎥 Video lectures: Telegram -> @Statistics_SharifiZarchi
+  - 📚 Slides & materials: [Course GitHub Repository](https://github.com/SharifiZarchi/Probability_Statistics)
+
+- **MIT OpenCourseWare 18.05 — Introduction to Probability and Statistics** *(English)*: 📚 slides only.
+  - Course page: https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/pages/classes-reading-and-in-class-materials/
   - **All Probability Reading (PDF)** — used for Weeks 1–5: https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_probability_pdf/
   - **All Statistics Reading (PDF)** — used for Weeks 6–9: https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_statistics_pdf/
+
+Our syllabus is based on the **MIT 18.05** course, so the MIT slides are the primary reference. Students comfortable with the English slides can rely on them alone and skip the Sharif videos. For most students, however, the **Sharif** video lectures are easier to follow and are sufficient for most weeks. For the few weeks where the Sharif videos don't fully cover the material, complementary links from YouTube or Khan Academy are provided in the table below.
+
+---
 
 **All assignments are due **Saturday, 23:59**.
 
