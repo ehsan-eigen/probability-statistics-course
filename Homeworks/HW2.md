@@ -1,10 +1,4 @@
-# Statistics and Probability
-
-**BIHE University**
-
-April, 2025
-
----
+# Statistics and Probability - Homework 2
 
 ## Question 1 (10 points)
 
