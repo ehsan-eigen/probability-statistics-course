@@ -1,23 +1,13 @@
 # Probability and Statistics — Computer Engineering
 ## Homework 3
 
-> **Theme:** functions of random variables (transformations, and the minimum/maximum of several variables) and the continuous distributions we have studied (uniform, exponential, normal), with the binomial/Poisson link at the end.
+> **Theme:** functions of random variables (transformations, and the sum / minimum / maximum of several variables) and the continuous distributions we have studied (exponential, normal), with the binomial/Poisson link at the end.
 >
 > A few parts ask you to **prove** a result; a few others ask you to **simulate** a result you cannot yet derive by hand. That contrast is intentional.
 
 ---
 
-## Question 1 — Uniform distribution: the bus-stop problem (15 points)
-
-You arrive at a bus stop at a **random time, uniformly distributed between 8:00 and 8:30 AM**. Buses arrive every 15 minutes — at **8:00, 8:15, and 8:30**. Let $T$ be your arrival time measured in minutes after 8:00, so $T \sim \text{Uniform}[0, 30]$, and let $W$ be the time you must wait until the next bus.
-
-**(a)** What is the probability that you wait **less than 5 minutes**? (8 points)
-
-**(b)** Compute the expected waiting time $E[W]$. (7 points)
-
----
-
-## Question 2 — The normal distribution (20 points)
+## Question 1 — The normal distribution (20 points)
 
 The measurement error of a sensor (in millivolts) is modeled as
 
@@ -43,7 +33,7 @@ The sensor reports the true voltage plus a random error $E$.
 
 ---
 
-## Question 3 — The exponential distribution: data plans and pricing (25 points)
+## Question 2 — The exponential distribution: data plans and pricing (25 points)
 
 Two internet providers, $A$ and $B$, bill customers monthly. A customer downloads $X$ gigabytes per month, where $X$ follows an exponential distribution with a **mean of 50 GB** (rate $\lambda = 1/50$). The two providers turn usage into a monthly bill (in dollars) differently:
 
@@ -58,7 +48,7 @@ Two internet providers, $A$ and $B$, bill customers monthly. A customer download
 
 **(d)** Simulate $100{,}000$ customers for each provider. For each: plot a histogram of the simulated bills, report the simulated mean, variance, and standard deviation, and overlay the theoretical PDF from part (a). Do the simulations match the theory? (5 points)
 
-**(e)** Which provider has the **higher average bill**, and which has **more variable** bills? Note which transformation — the linear one or the $\sqrt{\cdot}$ one — dampens variability, and briefly explain why. (2 points)
+**(e)** You should find that the two providers collect a **similar average bill** per customer, so comparing them on revenue alone is not very informative — the real difference is in *risk*. Which pricing model would a company with **lower risk tolerance** prefer, i.e. which one produces **less variable** revenue? Justify your answer using the variances you computed in part (b). (2 points)
 
 > **Reminder.**
 > - $R_A = aX + b$ is a **linear** transformation.
@@ -67,9 +57,54 @@ Two internet providers, $A$ and $B$, bill customers monthly. A customer download
 
 ---
 
+## Question 3 — Summing random variables: a provider's total income (15 points)
+
+Provider $A$ from the previous question has **100 independent customers**. To keep things simple, suppose the provider earns \$1 per gigabyte, so customer $i$ contributes an amount $X_i$ (their monthly usage in GB), and the company's **total monthly income** is
+
+$$Y = X_1 + X_2 + \cdots + X_{100}.$$
+
+Before doing the parts, read the following — it explains which questions about a sum are easy and which are hard.
+
+### Means and variances are easy — and do not depend on the distributions involved
+
+For *any* random variables $X_1, \dots, X_n$, the expected value of their sum is always the sum of their expected values:
+
+$$E[X_1 + \cdots + X_n] = E[X_1] + \cdots + E[X_n].$$
+
+This is **linearity of expectation**. It needs no assumptions at all — the variables need not be independent and may follow any distributions. If, in addition, the variables are **independent**, then the variances also add:
+
+$$\mathrm{Var}[X_1 + \cdots + X_n] = \mathrm{Var}[X_1] + \cdots + \mathrm{Var}[X_n].$$
+
+(Variances add only under independence, because expanding the variance of a sum produces cross terms — the covariances — which are zero exactly when the variables are independent.)
+
+### The full distribution is the hard part
+
+Knowing the mean and variance of a sum tells us nothing about its **shape**, and the shape is much harder to pin down. In particular, the sum need not stay in the same distribution *family* as its parts:
+
+- The sum of independent **exponential** variables is **not** exponential (it is an *Erlang / Gamma* distribution, which we will not study in this course).
+- The sum of independent **normal** variables, on the other hand, **is** again normal.
+
+You will now verify all of this — the easy part by hand, the hard part by simulation.
+
+### Part A — Exponential usage
+
+Assume each $X_i \sim \text{Exp}(\text{mean } 50)$, independently.
+
+**(a)** Using the two facts above, show that $E[Y] = 100\,E[X]$ and $\mathrm{Var}(Y) = 100\,\mathrm{Var}(X)$, and give their numerical values. (5 points)
+
+**(b)** Simulate the total income $Y$ many times (each realization is the sum of 100 independent exponential draws). Plot a histogram of $Y$ and confirm that, although its mean and variance are as in part (a), its **shape is no longer exponential**. Describe how the shape differs. (5 points)
+
+### Part B — Normal usage
+
+Now suppose instead that each $X_i \sim N(\mu = 50,\ \sigma = 5)$, independently.
+
+**(c)** State $E[Y]$ and $\mathrm{Var}(Y)$ (the same rules apply). Then simulate $Y$, plot its histogram, and overlay the density of $N\big(100\cdot 50,\ 100\cdot 5^2\big)$ to confirm that the total income is **still normal**. (5 points)
+
+---
+
 ## Question 4 — The memoryless property (10 points)
 
-Recall the tender in which company $A$ announces a price for a drilling project, where that price is exponentially distributed with a mean of \$12 million:
+A drilling project is awarded by a **tender**: company $A$ announces a price that is exponentially distributed with a mean of \$12 million,
 
 $$X_A \sim \text{Exp}(\text{mean } 12).$$
 
@@ -77,7 +112,7 @@ Suppose an insider **leaks** that company $A$'s announced price will be **greate
 
 **(a)** Given this information, what is the probability that $A$'s price will exceed \$15 million? (4 points)
 
-**(b)** Compare your answer with the *unconditional* probability $P(X_A > 5)$. What property of the exponential distribution does this illustrate — and in plain words, what does it mean here (does the leak of "already above \$10 million" change how much *more* we should expect)? (3 points)
+**(b)** Compare your answer with the *unconditional* probability $P(X_A > 5)$. What property of the exponential distribution does this illustrate — and in plain words, what does it mean here (does knowing the price is "already above \$10 million" change how much *more* we should expect)? (3 points)
 
 **(c)** Prove this property in general: show that for an exponential random variable,
 $$P(X > s + t \mid X > s) = P(X > t) \qquad \text{for all } s, t \ge 0.$$
@@ -87,40 +122,15 @@ $$P(X > s + t \mid X > s) = P(X > t) \qquad \text{for all } s, t \ge 0.$$
 
 ## Question 5 — Combining random variables: minimum and maximum (15 points)
 
-When we build a new random variable out of several others, we can ask three separate questions about it: what is its **mean**, what is its **variance**, and what is its full **distribution**? These three questions differ enormously in difficulty.
-
-### Means and variances are easy — and do not depend on the distributions involved
-
-For *any* random variables $X_1, X_2, \dots, X_n$, the expected value of their sum is always the sum of their expected values:
-
-$$E[X_1 + X_2 + \cdots + X_n] = E[X_1] + E[X_2] + \cdots + E[X_n].$$
-
-This is **linearity of expectation**. It needs no assumptions at all: the variables do not have to be independent, and they may follow any distributions whatsoever. It follows directly from the fact that the integral of a sum is the sum of the integrals.
-
-For the **variance**, one extra condition is needed. If the variables are **independent**, then
-
-$$\mathrm{Var}[X_1 + X_2 + \cdots + X_n] = \mathrm{Var}[X_1] + \mathrm{Var}[X_2] + \cdots + \mathrm{Var}[X_n].$$
-
-Variances add only under independence because expanding the variance of a sum produces cross terms (the covariances between the variables), and those covariances are exactly zero when the variables are independent.
-
-You have already used both of these facts: the number of dropped packets in a session, $X = Y_1 + \cdots + Y_n$, is a sum of independent Bernoulli trials, and that is precisely why $E[X] = np$ and $\mathrm{Var}(X) = np(1-p)$.
-
-### The full distribution is the hard part
-
-Knowing the mean and variance of a combination tells us **nothing** about its shape. Finding the actual distribution is far harder, and two different things can go wrong:
-
-- **The family can change.** The sum of independent Bernoulli variables is a **Binomial** — *not* another Bernoulli. So a combination does not, in general, look like the pieces it is built from.
-- **The result may be a distribution we have not studied, or none at all.** The sum of independent **normal** variables happens to be normal again (the family is preserved). But the sum of independent **exponential** variables is an *Erlang (Gamma)* distribution, which we will **not** cover in this course — and for many combinations no simple closed form exists at all.
-
-The same story holds for the **minimum** and **maximum** of several random variables — quantities that arise whenever we care about the *first* thing to happen or the *last* thing to happen. Sometimes the minimum has a clean, familiar distribution; sometimes it has none, and simulation is the only way forward. The two parts below show one case of each.
-
-### Part I — When the minimum is tractable (the tender)
-
-In the tender, two firms $A$ and $B$ independently announce prices, and the lower price wins:
+Recall the tender from Question 4. A second company $B$ also submits a bid, independently of $A$, and the **lower** price wins the project:
 
 $$X_A \sim \text{Exp}(\text{mean } 12), \qquad X_B \sim \text{Exp}(\text{mean } 13), \qquad T = \min(X_A,\ X_B).$$
 
-**(a)** Show that $T$ is again **exponentially distributed**, and find its rate and mean. Then compute $P(T < 10)$. (8 points)
+In Question 3 we saw that a *sum* of random variables has an easy mean and variance but a distribution that may or may not stay in a familiar family. The same is true of the **minimum** and **maximum** — quantities that arise whenever we care about the *first* or the *last* thing to happen. Sometimes the minimum has a clean, familiar distribution; sometimes it has none, and simulation is the only way forward. The two parts below show one case of each.
+
+### Part I — When the minimum is tractable (the tender)
+
+**(a)** Show that $T = \min(X_A, X_B)$ is again **exponentially distributed**, and find its rate and mean. Then compute $P(T < 10)$. (8 points)
 
 > **Hint.** Work with the survival function $P(T > t) = P(X_A > t \text{ and } X_B > t)$ and use independence.
 
@@ -147,15 +157,3 @@ You publish an app on the Play Store. Each week it is shown to about $1000$ user
 > from scipy.stats import binom, poisson
 > ```
 > Useful functions: `binom.pmf`, `binom.cdf`, `poisson.pmf`, `poisson.cdf`. For the Poisson model use rate $\lambda = np$.
-
----
-
-### Optional
-
-## Question 7 — Reading and comparing CDFs (10 bonus points)
-
-The diagram shows the cumulative distribution function (CDF) of the monthly income of the citizens of four different countries. Using only these curves, compare the four countries — for example, which has the most people in poverty, which is the most equal, and which has the highest incomes.
-
-![Cumulative income distributions for four countries](HW3-v2-q7-chart.png)
-
-*Chart description: four CDF curves. The horizontal axis is monthly income in dollars (marked at \$5000, \$10000, \$15000, \$20000); the vertical axis is cumulative probability from $0$ to $1$. The **orange** curve rises fastest and saturates near $1$ earliest (income concentrated at low values). The **blue/purple** curve rises somewhat more slowly. The **red** curve stays low at first, then rises to reach $1$ near the high-income end. The **green** curve is a straight diagonal from the origin to the top-right (a uniform-like spread of income).*
