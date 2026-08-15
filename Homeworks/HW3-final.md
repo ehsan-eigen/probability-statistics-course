@@ -3,7 +3,7 @@
 
 > **Theme:** functions of random variables (transformations, and the sum / minimum / maximum of several variables) and the continuous distributions we have studied (exponential, normal), with the binomial/Poisson link at the end.
 >
-> A few parts ask you to **prove** a result; a few others ask you to **simulate** a result you cannot yet derive by hand. That contrast is intentional.
+> A few parts ask you to **prove** a result; a few others ask you to **simulate** a result you cannot yet derive by hand. That contrast is intentional. (When we say a result is found *empirically*, we mean exactly this — estimating it by simulation.)
 
 ---
 
