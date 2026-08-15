@@ -3,7 +3,7 @@
 
 > **Theme:** functions of random variables (transformations, and the minimum/maximum of several variables) and the continuous distributions we have studied (uniform, exponential, normal), with the binomial/Poisson link at the end.
 >
-> Several parts ask you to **prove** a result (mean, variance, the memoryless property) — you now have all the tools for these. A few other parts ask you to **simulate** a result you cannot yet derive by hand; that contrast is intentional.
+> A few parts ask you to **prove** a result; a few others ask you to **simulate** a result you cannot yet derive by hand. That contrast is intentional.
 
 ---
 
@@ -13,28 +13,11 @@ You arrive at a bus stop at a **random time, uniformly distributed between 8:00 
 
 **(a)** What is the probability that you wait **less than 5 minutes**? (8 points)
 
-**(b)** Write $W$ as a function of $T$, then compute the expected waiting time $E[W]$ **by integrating over the density of $T$** (show the integral, don't just quote a symmetry argument). (7 points)
-
-> **Recall.** For $T \sim \text{Uniform}[a,b]$ the density is $f_T(t) = \dfrac{1}{b-a}$ for $t \in [a,b]$ and $0$ otherwise, and $E[g(T)] = \displaystyle\int_a^b g(t)\, f_T(t)\, dt$.
+**(b)** Compute the expected waiting time $E[W]$. (7 points)
 
 ---
 
-## Question 2 — Transformation of a random variable (10 points)
-
-Let $X \sim \text{Uniform}\left[-\pi/2,\ +\pi/2\right]$ and define
-
-$$Y = \sin(X).$$
-
-**(a)** Determine the support (range of possible values) of $Y$. (3 points)
-
-**(b)** Find the probability density function $f_Y(y)$, and state on which interval it is valid. (7 points)
-
-> **Hint.** On $\left[-\pi/2,\ +\pi/2\right]$ the function $\sin$ is strictly increasing, hence invertible. Use the change-of-variables formula
-> $$f_Y(y) = f_X\big(g^{-1}(y)\big)\,\left|\frac{d}{dy}\,g^{-1}(y)\right|.$$
-
----
-
-## Question 3 — The normal distribution (20 points)
+## Question 2 — The normal distribution (20 points)
 
 The measurement error of a sensor (in millivolts) is modeled as
 
@@ -60,74 +43,92 @@ The sensor reports the true voltage plus a random error $E$.
 
 ---
 
-## Question 4 — The exponential distribution: data plans (25 points)
+## Question 3 — The exponential distribution: data plans and pricing (25 points)
 
-Two internet providers, $A$ and $B$, bill customers monthly. A customer downloads $X$ gigabytes per month, where $X$ follows an exponential distribution with a **mean of 5 GB** (rate $\lambda = 1/5$).
+Two internet providers, $A$ and $B$, bill customers monthly. A customer downloads $X$ gigabytes per month, where $X$ follows an exponential distribution with a **mean of 50 GB** (rate $\lambda = 1/50$). The two providers turn usage into a monthly bill (in dollars) differently:
 
-### Part I — Understanding $X$
+- Provider $A$: $\quad R_A = 25 + 0.5\,X \qquad$ (a \$25 base fee plus \$0.50 per GB)
+- Provider $B$: $\quad R_B = 20 + 5\sqrt{X} \qquad$ (a \$20 base fee, with a usage charge that grows more slowly)
 
-**(a) (Prove the mean.)** Starting from the exponential density $f_X(x) = \lambda e^{-\lambda x}$ for $x \ge 0$, show by evaluating the integral that $E[X] = 1/\lambda$. State the value of $\mathrm{Var}(X)$. (4 points)
+**(a)** For each of $R_A$ and $R_B$: determine its support (range of possible values), and find its PDF and CDF. (10 points)
 
-**(b) (Memoryless property.)** Prove **in general** that for the exponential distribution
-$$P(X > s + t \mid X > s) = P(X > t) \quad \text{for all } s, t \ge 0.$$
-Then compute $P(X > 10 \mid X > 5)$ and compare it with $P(X > 5)$. What does this say about a customer who has "already downloaded a lot"? (4 points)
+**(b)** Compute the expected value and variance of $R_A$ and of $R_B$. (You may leave $E[\sqrt{X}]$ in integral form or evaluate it.) (5 points)
 
-### Part II — Pricing models
+**(c)** Compute $P(R_A > 50)$ and explain in words what this probability means. (3 points)
 
-The two providers convert usage into a monthly bill (in dollars) differently:
+**(d)** Simulate $100{,}000$ customers for each provider. For each: plot a histogram of the simulated bills, report the simulated mean, variance, and standard deviation, and overlay the theoretical PDF from part (a). Do the simulations match the theory? (5 points)
 
-- Provider $A$: $\quad R_A = 50 + 20X \qquad$ (a \$50 base fee plus \$20 per GB)
-- Provider $B$: $\quad R_B = 40 + 30\sqrt{X} \qquad$ (a \$40 base fee, with a usage charge that grows more slowly)
-
-**(c)** Find the PDF and CDF of $R_A$ and of $R_B$. (7 points)
-
-**(d)** Compute the expected value and variance of $R_A$ and of $R_B$. (You may leave $E[\sqrt{X}]$ in integral form or evaluate it.) (4 points)
-
-**(e)** Compute $P(R_A > 90)$ and explain in words what this probability means. (2 points)
-
-**(f)** Simulate $100{,}000$ customers for each provider. For each: plot a histogram of the simulated bills, report the simulated mean, variance, and standard deviation, and overlay the theoretical PDF from part (c). Then state which provider has the **higher average bill** and which has **more variable** bills — and note which transformation (the linear one or the $\sqrt{\cdot}$ one) dampens variability. (4 points)
+**(e)** Which provider has the **higher average bill**, and which has **more variable** bills? Note which transformation — the linear one or the $\sqrt{\cdot}$ one — dampens variability, and briefly explain why. (2 points)
 
 > **Reminder.**
 > - $R_A = aX + b$ is a **linear** transformation.
-> - $R_B = a\sqrt{X} + b$ is a **nonlinear** transformation, so its PDF requires the change-of-variables method (as in Question 2).
+> - $R_B = a\sqrt{X} + b$ is a **nonlinear** transformation, so finding its PDF requires the change-of-variables method:
+> $$f_R(r) = f_X\big(g^{-1}(r)\big)\,\left|\frac{d}{dr}\,g^{-1}(r)\right|.$$
+
+---
+
+## Question 4 — The memoryless property (10 points)
+
+Recall the tender in which company $A$ announces a price for a drilling project, where that price is exponentially distributed with a mean of \$12 million:
+
+$$X_A \sim \text{Exp}(\text{mean } 12).$$
+
+Suppose an insider **leaks** that company $A$'s announced price will be **greater than \$10 million**.
+
+**(a)** Given this information, what is the probability that $A$'s price will exceed \$15 million? (4 points)
+
+**(b)** Compare your answer with the *unconditional* probability $P(X_A > 5)$. What property of the exponential distribution does this illustrate — and in plain words, what does it mean here (does the leak of "already above \$10 million" change how much *more* we should expect)? (3 points)
+
+**(c)** Prove this property in general: show that for an exponential random variable,
+$$P(X > s + t \mid X > s) = P(X > t) \qquad \text{for all } s, t \ge 0.$$
+(3 points)
 
 ---
 
 ## Question 5 — Combining random variables: minimum and maximum (15 points)
 
-When we build a new random variable out of several others, three things can be asked about it: its **mean**, its **variance**, and its full **distribution**. It is worth being clear about which of these is easy and which is hard.
+When we build a new random variable out of several others, we can ask three separate questions about it: what is its **mean**, what is its **variance**, and what is its full **distribution**? These three questions differ enormously in difficulty.
 
-> **Reminder — means and variances are easy.** For *any* random variables (whatever their distributions),
-> $$E[X_1 + \cdots + X_n] = E[X_1] + \cdots + E[X_n]$$
-> by **linearity of expectation** (no independence needed — it follows from $\int\!\!\int (x+y)\,f = \int x f + \int y f$). And *if they are independent*,
-> $$\mathrm{Var}[X_1 + \cdots + X_n] = \mathrm{Var}[X_1] + \cdots + \mathrm{Var}[X_n],$$
-> because the cross terms are covariances, which vanish under independence. This is exactly how the packet-drop count $X = Y_1 + \cdots + Y_n$ (a sum of Bernoullis) gets $E[X] = np$ and $\mathrm{Var}(X) = np(1-p)$.
->
-> **The full distribution is the hard part.** The distribution of a combination is not always derivable in closed form, and the *family* is not always preserved:
-> - Sum of $n$ Bernoulli$(p)$ $\to$ **Binomial**$(n,p)$ — the family *changes* (a binomial is not a Bernoulli).
-> - Sum of independent **normals** $\to$ again **normal** — family preserved.
-> - Sum of independent **exponentials** $\to$ a distribution called the **Erlang (Gamma)** distribution, which we will *not* cover in this course.
-> - In general, no simple closed form need exist at all.
+### Means and variances are easy — and do not depend on the distributions involved
 
-The same contrast appears for the **minimum** or **maximum** of random variables — quantities that show up whenever we care about "the first to happen" or "the last to happen." Sometimes the minimum has a clean distribution; sometimes it does not.
+For *any* random variables $X_1, X_2, \dots, X_n$, the expected value of their sum is always the sum of their expected values:
+
+$$E[X_1 + X_2 + \cdots + X_n] = E[X_1] + E[X_2] + \cdots + E[X_n].$$
+
+This is **linearity of expectation**. It needs no assumptions at all: the variables do not have to be independent, and they may follow any distributions whatsoever. It follows directly from the fact that the integral of a sum is the sum of the integrals.
+
+For the **variance**, one extra condition is needed. If the variables are **independent**, then
+
+$$\mathrm{Var}[X_1 + X_2 + \cdots + X_n] = \mathrm{Var}[X_1] + \mathrm{Var}[X_2] + \cdots + \mathrm{Var}[X_n].$$
+
+Variances add only under independence because expanding the variance of a sum produces cross terms (the covariances between the variables), and those covariances are exactly zero when the variables are independent.
+
+You have already used both of these facts: the number of dropped packets in a session, $X = Y_1 + \cdots + Y_n$, is a sum of independent Bernoulli trials, and that is precisely why $E[X] = np$ and $\mathrm{Var}(X) = np(1-p)$.
+
+### The full distribution is the hard part
+
+Knowing the mean and variance of a combination tells us **nothing** about its shape. Finding the actual distribution is far harder, and two different things can go wrong:
+
+- **The family can change.** The sum of independent Bernoulli variables is a **Binomial** — *not* another Bernoulli. So a combination does not, in general, look like the pieces it is built from.
+- **The result may be a distribution we have not studied, or none at all.** The sum of independent **normal** variables happens to be normal again (the family is preserved). But the sum of independent **exponential** variables is an *Erlang (Gamma)* distribution, which we will **not** cover in this course — and for many combinations no simple closed form exists at all.
+
+The same story holds for the **minimum** and **maximum** of several random variables — quantities that arise whenever we care about the *first* thing to happen or the *last* thing to happen. Sometimes the minimum has a clean, familiar distribution; sometimes it has none, and simulation is the only way forward. The two parts below show one case of each.
 
 ### Part I — When the minimum is tractable (the tender)
 
-An oil company awards a drilling project through a **tender**: two firms $A$ and $B$ each announce a price, and the lower price wins. The prices are independent, with
+In the tender, two firms $A$ and $B$ independently announce prices, and the lower price wins:
 
-$$X_A \sim \text{Exp}(\text{mean } 12), \qquad X_B \sim \text{Exp}(\text{mean } 13),$$
+$$X_A \sim \text{Exp}(\text{mean } 12), \qquad X_B \sim \text{Exp}(\text{mean } 13), \qquad T = \min(X_A,\ X_B).$$
 
-and the price paid is $T = \min(X_A,\ X_B)$.
-
-**(a) (Prove it.)** Show that $T$ is again **exponentially distributed**, and find its rate and mean. Then compute $P(T < 10)$. (8 points)
+**(a)** Show that $T$ is again **exponentially distributed**, and find its rate and mean. Then compute $P(T < 10)$. (8 points)
 
 > **Hint.** Work with the survival function $P(T > t) = P(X_A > t \text{ and } X_B > t)$ and use independence.
 
 ### Part II — When the minimum is *not* tractable (normals)
 
-Two independent servers process a request; their times (in ms) are $X_1 \sim N(100, 15^2)$ and $X_2 \sim N(120, 20^2)$, and you get the response from whichever finishes first, so you wait $M = \min(X_1, X_2)$.
+Two independent servers process a request; their times (in ms) are $X_1 \sim N(100, 15^2)$ and $X_2 \sim N(120, 20^2)$, and you receive the response from whichever finishes first, so you wait $M = \min(X_1, X_2)$.
 
-**(b)** Unlike the exponential case, $M$ has **no simple analytical distribution** — and even its expected value $E[M]$ has no elementary closed form. Simulate $100{,}000$ values of $M$, plot a histogram, and report the sample mean as your estimate of $E[M]$. Is $E[M]$ smaller than $\min(100, 120) = 100$? Briefly explain why this must be so. (7 points)
+**(b)** Unlike the exponential case, $M$ has **no simple analytical distribution**, and even its expected value $E[M]$ has no elementary closed form. Simulate $100{,}000$ values of $M$, plot a histogram, and report the sample mean as your estimate of $E[M]$. Is $E[M]$ smaller than $\min(100, 120) = 100$? Briefly explain why this must be so. (7 points)
 
 > **Connecting the dots.** For exponentials the minimum stays in the same family (you proved it in (a)), so everything is available in closed form. For normals neither the distribution nor even the mean of the minimum is analytically simple — simulation is our only practical tool. This is the norm, not the exception: most combinations of random variables must be studied empirically.
 
