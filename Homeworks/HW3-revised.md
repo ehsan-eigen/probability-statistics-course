@@ -61,9 +61,9 @@ Two internet providers, $A$ and $B$, bill customers monthly. A customer download
 
 ## Question 3 — Combination of random variables: Sum (20 points)
 
-Provider $A$ from Question 2 has **100 independent customers**, each billed the amount $R_A$ defined there. The company's **total monthly income** is the sum of the individual bills:
+Provider $A$ from Question 2 has **15 independent customers**, each billed the amount $R_A$ defined there. The company's **total monthly income** is the sum of the individual bills:
 
-$$Y = R_{A,1} + R_{A,2} + \cdots + R_{A,100}.$$
+$$Y = R_{A,1} + R_{A,2} + \cdots + R_{A,15}.$$
 
 Before doing the parts, read the following — it explains which questions about a sum are easy and which are hard.
 
@@ -91,7 +91,7 @@ You will now explore the two continuous cases by simulation — the mean and var
 
 Each customer's usage is $X_i \sim \text{Exp}(\text{mean } 50)$, exactly as in Question 2, so each bill is $R_{A,i} = 25 + 0.5\,X_i$.
 
-**(a)** Simulate the total income $Y$ many times (each realization is a sum of 100 independent bills). Report the simulated mean and variance and check they agree with $100\,E[R_A]$ and $100\,\mathrm{Var}(R_A)$ (using the values from Question 2). Then plot a histogram of $Y$ and confirm that its **shape is no longer exponential**; describe how it differs. (10 points)
+**(a)** Simulate the total income $Y$ many times (each realization of $Y$ is a sum of 15 independent bills). Report the simulated mean and variance and check they agree with $15\,E[R_A]$ and $15\,\mathrm{Var}(R_A)$ (using the values from Question 2). Then plot a histogram of $Y$ using **all** of the $Y$ values you generated — if you ran the simulation $10{,}000$ times you have $10{,}000$ samples of $Y$, each one itself a sum of 15 samples of $R_A$ — and confirm that its **shape is no longer exponential**; describe how it differs. (10 points)
 
 ### Part B — Usage $X$ is normal instead
 
