@@ -2,7 +2,7 @@
 
 ### Homework 4 — Continuous Random Variables and Simulation
 
-**Total: 100 points**
+**Total: 100 points + 25 optional bonus points**
 
 This homework focuses on:
 
@@ -11,14 +11,14 @@ This homework focuses on:
 - Expectation and variance for continuous random variables
 - The Central Limit Theorem and Law of Large Numbers
 - Simulation and Monte Carlo estimation
-- Joint and conditional continuous distributions
-- Marginal distributions and independence
+- Joint continuous distributions
+- Marginal distributions, independence, and conditional probability
 
 > The Exponential distribution and transformations of continuous random variables were covered in Homework 3.
 
 ---
 
-## Question 1 — A/B Testing, the Central Limit Theorem, and Monte Carlo Simulation (20 Points)
+## Question 1 — A/B Testing, the Central Limit Theorem, and Monte Carlo Simulation (25 Points)
 
 An online retailer tests two versions of a product page, **A** and **B**.
 
@@ -51,7 +51,7 @@ For each experiment, suppose that:
 - 1000 users are independently shown version A,
 - another 1000 users are independently shown version B.
 
-### (a) Simulation — 3 points
+### (a) Simulation — 4 points
 
 Simulate **10,000 independent A/B experiments**.
 
@@ -65,7 +65,7 @@ $$
 D = \hat{p}_B - \hat{p}_A.
 $$
 
-### (b) Simulated distribution — 3 points
+### (b) Simulated distribution — 4 points
 
 Plot a histogram of the 10,000 simulated values of $D$.
 
@@ -77,7 +77,7 @@ Describe its:
 
 Does the distribution appear approximately Normal?
 
-### (c) CLT approximation — 4 points
+### (c) CLT approximation — 5 points
 
 Using the Central Limit Theorem, derive an approximate distribution for $D$.
 
@@ -99,7 +99,7 @@ $$
 D \approx N(\mu_D,\sigma_D^2).
 $$
 
-### (d) Probability that B performs better — 3 points
+### (d) Probability that B performs better — 4 points
 
 Using your Normal approximation, calculate
 
@@ -119,7 +119,7 @@ $$
 
 Compare this empirical result with the theoretical result from part (d).
 
-### (f) Monte Carlo stability — 4 points
+### (f) Monte Carlo stability — 5 points
 
 The number of simulated experiments affects the accuracy and stability of a simulation-based estimate.
 
@@ -144,7 +144,7 @@ Briefly explain:
 
 ---
 
-## Question 2 — Law of Large Numbers and Sampling Bias (15 Points)
+## Question 2 — Law of Large Numbers and Sampling Bias (20 Points)
 
 A ministry of health wants to estimate vaccination coverage across rural villages.
 
@@ -154,7 +154,7 @@ $$
 p = 0.75.
 $$
 
-### (a) Law of Large Numbers — 4 points
+### (a) Law of Large Numbers — 6 points
 
 In your own words, explain what the **Law of Large Numbers (LLN)** predicts should happen to the sample vaccination rate as the sample size increases.
 
@@ -172,7 +172,7 @@ Plot or summarize the distributions of the estimates for the four sample sizes.
 
 Explain how your simulation illustrates the Law of Large Numbers.
 
-### (b) Sampling error — 3 points
+### (b) Sampling error — 4 points
 
 Now use
 
@@ -195,7 +195,7 @@ Report:
 - the number of such samples,
 - the proportion of such samples.
 
-### (c) What if the sampling method is biased? — 5 points
+### (c) What if the sampling method is biased? — 7 points
 
 Now suppose the population contains two groups:
 
@@ -238,7 +238,7 @@ Distinguish between:
 
 ---
 
-## Question 3 — PDFs, CDFs, Uniform Distribution, Expectation, and Variance (20 Points)
+## Question 3 — PDFs, CDFs, Uniform Distribution, Expectation, and Variance (25 Points)
 
 ### Part A — Where Are the Raisins?
 
@@ -256,7 +256,7 @@ $$
 
 Let $H$ denote the height of a randomly selected raisin.
 
-### (a) From physical density to probability density — 3 points
+### (a) From physical density to probability density — 4 points
 
 First calculate the total number of raisins predicted by this model:
 
@@ -278,7 +278,7 @@ $$
 \int_0^{30} f_H(h)\,dh = 1.
 $$
 
-### (b) Find and graph the CDF — 4 points
+### (b) Find and graph the CDF — 5 points
 
 Derive the CDF
 
@@ -303,7 +303,7 @@ Plot both:
 
 Briefly explain why the PDF decreases with height while the CDF must always increase.
 
-### (c) Probability — 2 points
+### (c) Probability — 3 points
 
 Find the probability that a randomly selected raisin is located in the **bottom third** of the box:
 
@@ -313,7 +313,7 @@ $$
 
 Interpret your answer in words.
 
-### (d) Expected height and variance — 5 points
+### (d) Expected height and variance — 6 points
 
 Compute
 
@@ -355,7 +355,7 @@ $$
 U\sim\operatorname{Uniform}(0,30).
 $$
 
-### (e) Uniform PDF, CDF, mean, and variance — 3 points
+### (e) Uniform PDF, CDF, mean, and variance — 4 points
 
 Write the PDF and CDF of $U$, including their complete piecewise definitions.
 
@@ -403,7 +403,7 @@ Explain intuitively why the two models give different answers.
 
 ---
 
-## Question 4 — Joint Continuous Random Variables (20 Points)
+## Question 4 — Joint Continuous Random Variables (30 Points)
 
 Imagine two continuous random variables:
 
@@ -430,13 +430,13 @@ $$
 f_{X,Y}(x,y)=0.
 $$
 
-### (a) Understand the support — 3 points
+### (a) Understand the support — 5 points
 
 Sketch the valid region of $(X,Y)$ in the $xy$-plane.
 
 Explain why the support is triangular.
 
-### (b) Find the normalization constant — 4 points
+### (b) Find the normalization constant — 7 points
 
 Find the value of $c$ such that the total probability over the valid region is 1:
 
@@ -450,7 +450,7 @@ $$
 
 Show your integration.
 
-### (c) Conditional probability from a slice — 6 points
+### (c) Conditional probability from a slice — 8 points
 
 We want to calculate
 
@@ -518,7 +518,7 @@ $$
 {\text{total density along the slice }X=6}.
 $$
 
-### (d) Marginal distributions and independence — 7 points
+### (d) Marginal distributions and independence — 10 points
 
 Derive both marginal densities:
 
@@ -550,7 +550,7 @@ Also briefly explain what the triangular shape of the valid region suggests abou
 
 ---
 
-## Question 5 — Conditional Density and Conditional Expectation (25 Points)
+# Optional Bonus Question — Conditional Density and Conditional Expectation (25 Bonus Points)
 
 A marketing analyst wants to understand customer behavior using the following continuous random variables:
 
