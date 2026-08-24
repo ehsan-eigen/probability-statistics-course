@@ -2,7 +2,7 @@
 
 ### Homework 4 — Continuous Random Variables and Simulation
 
-**Total: 100 points + 25 optional bonus points**
+**Total: 100 points**
 
 This homework focuses on:
 
@@ -12,15 +12,13 @@ This homework focuses on:
 - The Central Limit Theorem and Law of Large Numbers
 - Simulation and Monte Carlo estimation
 - Joint and conditional continuous distributions
-- Comparing theoretical distributions with empirical data
+- Marginal distributions and independence
 
 > The Exponential distribution and transformations of continuous random variables were covered in Homework 3.
 
 ---
 
-## Question 1 — Normal Approximation, Simulation, and Model Checking (30 Points)
-
-### Part A — A/B Testing and the Central Limit Theorem
+## Question 1 — A/B Testing, the Central Limit Theorem, and Monte Carlo Simulation (20 Points)
 
 An online retailer tests two versions of a product page, **A** and **B**.
 
@@ -123,9 +121,9 @@ Compare this empirical result with the theoretical result from part (d).
 
 ### (f) Monte Carlo stability — 4 points
 
-The number of simulated experiments also affects the accuracy of a simulation-based estimate.
+The number of simulated experiments affects the accuracy and stability of a simulation-based estimate.
 
-Estimate $P(D>0)$ repeatedly using
+Estimate $P(D>0)$ repeatedly using:
 
 $$
 100,\qquad 1000,\qquad 10000
@@ -146,94 +144,7 @@ Briefly explain:
 
 ---
 
-### Part B — Does a Normal Model Describe the Tails?
-
-You are given a dataset called `tail_data.csv` containing observations of a continuous random variable.
-
-The distribution that generated the data is intentionally **not given to you**.
-
-Your goal is to investigate whether a Normal distribution provides a reasonable model for the observations.
-
-### (g) Fit a Normal model — 3 points
-
-Calculate the sample mean
-
-$$
-\bar{x}
-$$
-
-and sample standard deviation
-
-$$
-s.
-$$
-
-Now consider the fitted Normal model
-
-$$
-X_{\text{Normal}} \sim N(\bar{x},s^2).
-$$
-
-Plot:
-
-1. a histogram of the observed data,
-2. the PDF of $N(\bar{x},s^2)$ on the same graph.
-
-Describe what you observe.
-
-### (h) Compare CDFs — 3 points
-
-Plot on the same axes:
-
-- the **empirical CDF** of the observed data,
-- the theoretical CDF of
-
-$$
-N(\bar{x},s^2).
-$$
-
-Recall that the empirical CDF is
-
-$$
-\hat{F}(x)
-=
-\frac{\text{number of observations less than or equal to }x}
-{\text{total number of observations}}.
-$$
-
-Do the two CDFs agree equally well everywhere?
-
-Pay particular attention to the left and right tails.
-
-### (i) Investigating extreme values — 4 points
-
-Using the observed data, estimate the proportions satisfying
-
-$$
-|X-\bar{x}| > 2s
-$$
-
-and
-
-$$
-|X-\bar{x}| > 3s.
-$$
-
-Then calculate the corresponding probabilities predicted by the fitted Normal distribution.
-
-Compare the empirical and theoretical probabilities.
-
-In a short paragraph, answer:
-
-- Does the Normal distribution describe the center of the data reasonably well?
-- Does it describe the tails reasonably well?
-- Why might using only the mean and standard deviation be insufficient when extreme events are important?
-
-> You are **not** expected to identify the distribution that generated the dataset.
-
----
-
-## Question 2 — Law of Large Numbers and Sampling Bias (20 Points)
+## Question 2 — Law of Large Numbers and Sampling Bias (15 Points)
 
 A ministry of health wants to estimate vaccination coverage across rural villages.
 
@@ -243,7 +154,7 @@ $$
 p = 0.75.
 $$
 
-### (a) Law of Large Numbers — 6 points
+### (a) Law of Large Numbers — 4 points
 
 In your own words, explain what the **Law of Large Numbers (LLN)** predicts should happen to the sample vaccination rate as the sample size increases.
 
@@ -261,7 +172,7 @@ Plot or summarize the distributions of the estimates for the four sample sizes.
 
 Explain how your simulation illustrates the Law of Large Numbers.
 
-### (b) Sampling error — 4 points
+### (b) Sampling error — 3 points
 
 Now use
 
@@ -284,7 +195,7 @@ Report:
 - the number of such samples,
 - the proportion of such samples.
 
-### (c) What if the sampling method is biased? — 7 points
+### (c) What if the sampling method is biased? — 5 points
 
 Now suppose the population contains two groups:
 
@@ -327,7 +238,7 @@ Distinguish between:
 
 ---
 
-## Question 3 — PDFs, CDFs, Uniform Distribution, Expectation, and Variance (25 Points)
+## Question 3 — PDFs, CDFs, Uniform Distribution, Expectation, and Variance (20 Points)
 
 ### Part A — Where Are the Raisins?
 
@@ -345,7 +256,7 @@ $$
 
 Let $H$ denote the height of a randomly selected raisin.
 
-### (a) From physical density to probability density — 4 points
+### (a) From physical density to probability density — 3 points
 
 First calculate the total number of raisins predicted by this model:
 
@@ -364,10 +275,10 @@ Clearly state the support of $H$.
 Verify that your PDF satisfies
 
 $$
-\int_0^{30}f_H(h)\,dh=1.
+\int_0^{30} f_H(h)\,dh = 1.
 $$
 
-### (b) Find and graph the CDF — 5 points
+### (b) Find and graph the CDF — 4 points
 
 Derive the CDF
 
@@ -392,7 +303,7 @@ Plot both:
 
 Briefly explain why the PDF decreases with height while the CDF must always increase.
 
-### (c) Probability — 3 points
+### (c) Probability — 2 points
 
 Find the probability that a randomly selected raisin is located in the **bottom third** of the box:
 
@@ -402,14 +313,14 @@ $$
 
 Interpret your answer in words.
 
-### (d) Expected height and variance — 6 points
+### (d) Expected height and variance — 5 points
 
 Compute
 
 $$
 E[H]
 =
-\int_0^{30}h f_H(h)\,dh
+\int_0^{30} h f_H(h)\,dh
 $$
 
 and
@@ -417,7 +328,7 @@ and
 $$
 E[H^2]
 =
-\int_0^{30}h^2 f_H(h)\,dh.
+\int_0^{30} h^2 f_H(h)\,dh.
 $$
 
 Then use
@@ -444,7 +355,7 @@ $$
 U\sim\operatorname{Uniform}(0,30).
 $$
 
-### (e) Uniform PDF, CDF, mean, and variance — 4 points
+### (e) Uniform PDF, CDF, mean, and variance — 3 points
 
 Write the PDF and CDF of $U$, including their complete piecewise definitions.
 
@@ -492,7 +403,7 @@ Explain intuitively why the two models give different answers.
 
 ---
 
-## Question 4 — Joint Continuous Random Variables (25 Points)
+## Question 4 — Joint Continuous Random Variables (20 Points)
 
 Imagine two continuous random variables:
 
@@ -519,13 +430,13 @@ $$
 f_{X,Y}(x,y)=0.
 $$
 
-### (a) Understand the support — 4 points
+### (a) Understand the support — 3 points
 
 Sketch the valid region of $(X,Y)$ in the $xy$-plane.
 
 Explain why the support is triangular.
 
-### (b) Find the normalization constant — 5 points
+### (b) Find the normalization constant — 4 points
 
 Find the value of $c$ such that the total probability over the valid region is 1:
 
@@ -539,7 +450,7 @@ $$
 
 Show your integration.
 
-### (c) Conditional probability from a slice — 7 points
+### (c) Conditional probability from a slice — 6 points
 
 We want to calculate
 
@@ -607,7 +518,7 @@ $$
 {\text{total density along the slice }X=6}.
 $$
 
-### (d) Marginal distributions and independence — 9 points
+### (d) Marginal distributions and independence — 7 points
 
 Derive both marginal densities:
 
@@ -639,9 +550,7 @@ Also briefly explain what the triangular shape of the valid region suggests abou
 
 ---
 
-## Question 5 — Conditional Density and Conditional Expectation
-
-### 25 Bonus Points — Optional
+## Question 5 — Conditional Density and Conditional Expectation (25 Points)
 
 A marketing analyst wants to understand customer behavior using the following continuous random variables:
 
@@ -661,7 +570,7 @@ f_{X,Y}(x,y)
 \end{cases}
 $$
 
-### (a)
+### (a) Verify the joint PDF — 4 points
 
 Verify that $f_{X,Y}(x,y)$ is a valid probability density function.
 
@@ -675,7 +584,7 @@ f_{X,Y}(x,y)\,dy\,dx
 1.
 $$
 
-### (b)
+### (b) Marginal density — 4 points
 
 Compute the marginal density
 
@@ -685,7 +594,7 @@ $$
 
 Clearly state its support.
 
-### (c)
+### (c) Conditional density and conditional expectation — 7 points
 
 Compute the conditional density
 
@@ -693,7 +602,9 @@ $$
 f_{Y\mid X}(y\mid x).
 $$
 
-Then use it to calculate the conditional expectation
+Clearly state the possible values of $y$ for a given value of $x$.
+
+Then use the conditional density to calculate
 
 $$
 E[Y\mid X=x].
@@ -701,7 +612,7 @@ $$
 
 Interpret $E[Y\mid X=x]$ in the context of customer behavior.
 
-### (d)
+### (d) Simulation — 6 points
 
 Simulate **10,000 customers** from the joint distribution.
 
@@ -722,10 +633,10 @@ $$
 
 Discuss whether the simulation agrees with the theoretical result.
 
-### (e)
+### (e) Interpretation — 4 points
 
 Based on the conditional expectation, briefly discuss what the model suggests about the relationship between time spent on the website and expected spending.
 
-How could such information potentially be used when designing advertising or upselling strategies?
+How could such information potentially be useful when designing advertising or upselling strategies?
 
 Also mention at least one reason why this mathematical relationship alone should **not** automatically be interpreted as a causal relationship.
